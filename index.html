@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabNum-Pro | Métodos Numéricos Aplicados</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1><i class="fas fa-calculator"></i> LabNum-Pro</h1>
+                <p>Herramientas de Métodos Numéricos Aplicados</p>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active" data-section="inicio">Inicio</a></li>
+                    <li><a href="#" class="nav-link" data-section="raices">Raíces</a></li>
+                    <li><a href="#" class="nav-link" data-section="edo">EDO</a></li>
+                    <li><a href="#" class="nav-link" data-section="interpolacion">Interpolación</a></li>
+                    <li><a href="#" class="nav-link" data-section="integracion">Integración</a></li>
+                    <li><a href="#" class="nav-link" data-section="algebra">Álgebra</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Sección de Inicio -->
+            <section id="inicio" class="content-section active">
+                <div class="hero">
+                    <h2><i class="fas fa-rocket"></i> Métodos Numéricos Aplicados</h2>
+                    <p>Herramientas prácticas para resolver problemas reales en ingeniería, física y ciencias aplicadas.</p>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <i class="fas fa-root-alt"></i>
+                            <h3>4 Métodos</h3>
+                            <p>Búsqueda de Raíces</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>3 Métodos</h3>
+                            <p>Ecuaciones Diferenciales</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-ruler-combined"></i>
+                            <h3>3 Métodos</h3>
+                            <p>Interpolación</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-integral"></i>
+                            <h3>4 Métodos</h3>
+                            <p>Integración Numérica</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-th"></i>
+                            <h3>3 Métodos</h3>
+                            <p>Álgebra Lineal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <h3><i class="fas fa-check-circle"></i> Aplicaciones Prácticas</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4><i class="fas fa-industry"></i> Ingeniería</h4>
+                            <p>Cálculo de esfuerzos, análisis estructural, optimización de procesos.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4><i class="fas fa-heartbeat"></i> Ciencias de la Salud</h4>
+                            <p>Modelado farmacocinético, dinámica de epidemias, procesamiento de señales médicas.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4><i class="fas fa-chart-bar"></i> Economía y Finanzas</h4>
+                            <p>Pronósticos, optimización de portafolios, modelos económicos dinámicos.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4><i class="fas fa-satellite"></i> Ciencias Ambientales</h4>
+                            <p>Modelado climático, simulación de contaminantes, gestión de recursos hídricos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-start">
+                    <h3><i class="fas fa-play-circle"></i> Cómo Usar</h3>
+                    <ol>
+                        <li>Selecciona una categoría de métodos en el menú superior</li>
+                        <li>Elige el método numérico específico que necesitas</li>
+                        <li>Ingresa los parámetros del problema</li>
+                        <li>O usa los ejemplos predefinidos con aplicaciones reales</li>
+                        <li>Visualiza resultados y compara métodos</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Sección de Raíces -->
+            <section id="raices" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-root-alt"></i> Métodos de Búsqueda de Raíces</h2>
+                    <p>Encuentra soluciones para ecuaciones no lineales aplicadas a problemas reales</p>
+                </div>
+                
+                <div class="method-selector">
+                    <button class="method-btn active" data-method="biseccion">Bisección</button>
+                    <button class="method-btn" data-method="newton">Newton-Raphson</button>
+                    <button class="method-btn" data-method="secante">Secante</button>
+                    <button class="method-btn" data-method="punto-fijo">Punto Fijo</button>
+                    <button class="method-btn" data-method="comparacion">Comparar Métodos</button>
+                </div>
+
+                <div class="method-content" id="biseccion-content">
+                    <div class="input-section">
+                        <h3><i class="fas fa-balance-scale"></i> Método de Bisección</h3>
+                        <p>Aplicación: Determinar el pH de una solución ácida (concentración de H+)</p>
+                        
+                        <div class="input-group">
+                            <label for="bisec-func">Función f(x) (use 'x' como variable):</label>
+                            <input type="text" id="bisec-func" value="x^3 + x^2 - 3*x - 3">
+                            <small>Ejemplo: Para pH: 10^(-x) + 1.8e-5 - x (donde x = -log[H+])</small>
+                        </div>
+                        
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="bisec-a">Límite inferior (a):</label>
+                                <input type="number" id="bisec-a" value="1" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="bisec-b">Límite superior (b):</label>
+                                <input type="number" id="bisec-b" value="2" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="bisec-tol">Tolerancia:</label>
+                                <input type="number" id="bisec-tol" value="0.0001" step="0.0001">
+                            </div>
+                            <div class="input-group">
+                                <label for="bisec-maxiter">Máx. iteraciones:</label>
+                                <input type="number" id="bisec-maxiter" value="100">
+                            </div>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button id="bisec-calc" class="calc-btn"><i class="fas fa-calculator"></i> Calcular</button>
+                            <button id="bisec-ejemplo" class="example-btn"><i class="fas fa-flask"></i> Ejemplo: Cálculo de pH</button>
+                            <button id="bisec-clear" class="clear-btn"><i class="fas fa-broom"></i> Limpiar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="results-section">
+                        <h3><i class="fas fa-chart-line"></i> Resultados</h3>
+                        <div class="result-container">
+                            <div class="result-text">
+                                <h4>Raíz encontrada:</h4>
+                                <p id="bisec-root">-</p>
+                                <h4>Iteraciones realizadas:</h4>
+                                <p id="bisec-iter">-</p>
+                                <h4>Error final:</h4>
+                                <p id="bisec-error">-</p>
+                                <h4>Valor de f(raíz):</h4>
+                                <p id="bisec-fval">-</p>
+                            </div>
+                            <div class="result-chart">
+                                <canvas id="bisec-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="iterations-table">
+                            <h4><i class="fas fa-table"></i> Iteraciones</h4>
+                            <div class="table-container">
+                                <table id="bisec-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Iteración</th>
+                                            <th>a</th>
+                                            <th>b</th>
+                                            <th>c</th>
+                                            <th>f(c)</th>
+                                            <th>Error</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bisec-table-body">
+                                        <!-- Datos se llenarán aquí -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido para otros métodos (oculto inicialmente) -->
+                <div class="method-content hidden" id="newton-content">
+    <!-- El contenido se generará dinámicamente con JavaScript -->
+    </div>
+                
+                <div class="method-content hidden" id="secante-content">
+                    <!-- Contenido para Secante -->
+                </div>
+                
+                <div class="method-content hidden" id="punto-fijo-content">
+                    <!-- Contenido para Punto Fijo -->
+                </div>
+                
+                <div class="method-content hidden" id="comparacion-content">
+                    <!-- Contenido para Comparación -->
+                </div>
+            </section>
+
+            <!-- Sección de EDO -->
+            <section id="edo" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> Ecuaciones Diferenciales Ordinarias</h2>
+                    <p>Resuelve problemas dinámicos en física, biología, ingeniería y más</p>
+                </div>
+                
+                <div class="method-selector">
+                    <button class="method-btn active" data-method="euler">Euler</button>
+                    <button class="method-btn" data-method="heun">Heun</button>
+                    <button class="method-btn" data-method="runge-kutta">Runge-Kutta</button>
+                </div>
+
+                <div class="method-content" id="euler-content">
+                    <!-- Contenido para Euler -->
+                </div>
+                
+                <div class="method-content hidden" id="heun-content">
+                    <!-- Contenido para Heun -->
+                </div>
+                
+                <div class="method-content hidden" id="runge-kutta-content">
+                    <!-- Contenido para Runge-Kutta -->
+                </div>
+                
+            </section>
+
+            <!-- Sección de Interpolación -->
+            <section id="interpolacion" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-ruler-combined"></i> Interpolación</h2>
+                    <p>Estima valores entre puntos conocidos para análisis de datos experimentales</p>
+                </div>
+                
+                <div class="method-selector">
+                    <button class="method-btn active" data-method="lagrange">Lagrange</button>
+                    <button class="method-btn" data-method="newton-interpolacion">Newton</button>
+                    <button class="method-btn" data-method="splines">Splines</button>
+                    <button class="method-btn" data-method="comparacion-interp">Comparar Métodos</button>
+                </div>
+
+                <div class="method-content" id="lagrange-content">
+                    <!-- Contenido para Lagrange -->
+                </div>
+                
+                <div class="method-content hidden" id="newton-interpolacion-content">
+                    <!-- Contenido para Newton-Interpolación -->
+                </div>
+                
+                <div class="method-content hidden" id="splines-content">
+                    <!-- Contenido para Splines -->
+                </div>
+                
+                <div class="method-content hidden" id="comparacion-interp-content">
+                    <!-- Contenido para Comparación -->
+                </div>
+            </section>
+
+            <!-- Sección de Integración -->
+            <section id="integracion" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-integral"></i> Integración Numérica</h2>
+                    <p>Cálculo de áreas, volúmenes, trabajo y otras cantidades integrales</p>
+                </div>
+                
+                <div class="method-selector">
+                    <button class="method-btn active" data-method="trapecio">Trapecio</button>
+                    <button class="method-btn" data-method="simpson-13">Simpson 1/3</button>
+                    <button class="method-btn" data-method="simpson-38">Simpson 3/8</button>
+                    <button class="method-btn" data-method="romberg">Romberg</button>
+                    <button class="method-btn" data-method="comparacion-int">Comparar Métodos</button>
+                </div>
+
+                <div class="method-content" id="trapecio-content">
+                    <!-- Contenido para Trapecio -->
+                </div>
+                
+                <div class="method-content hidden" id="simpson-13-content">
+                    <!-- Contenido para Simpson 1/3 -->
+                </div>
+                
+                <div class="method-content hidden" id="simpson-38-content">
+                    <!-- Contenido para Simpson 3/8 -->
+                </div>
+                
+                <div class="method-content hidden" id="romberg-content">
+                    <!-- Contenido para Romberg -->
+                </div>
+                
+                <div class="method-content hidden" id="comparacion-int-content">
+                    <!-- Contenido para Comparación -->
+                </div>
+            </section>
+
+            <!-- Sección de Álgebra -->
+            <section id="algebra" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-th"></i> Álgebra Lineal Numérica</h2>
+                    <p>Resuelve sistemas de ecuaciones lineales en ingeniería y ciencias</p>
+                </div>
+                
+                <div class="method-selector">
+                    <button class="method-btn" data-method="gauss-seidel">Gauss-Seidel</button>
+                    <button class="method-btn" data-method="lu">Descomposición LU</button>
+                </div>
+                
+                <div class="method-content hidden" id="gauss-seidel-content">
+                    <!-- Contenido para Gauss-Seidel -->
+                </div>
+                
+                <div class="method-content hidden" id="lu-content">
+                    <!-- Contenido para Descomposición LU -->
+                </div>
+                
+            </section>
+        </main>
+
+        <footer>
+            <p>LabNum-Pro &copy; 2025 | Métodos Numéricos Aplicados a Problemas Reales Univ. Jose Alejandro Fernande Sanchez</p>
+            <p class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a> |
+                <a href="#"><i class="fas fa-book"></i> Documentación</a> |
+                <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Scripts principales -->
+    <script src="scripts/main.js"></script>
+    
+    <!-- Scripts de métodos numéricos -->
+    <script src="scripts/raices/biseccion.js"></script>
+    <script src="scripts/raices/newton.js"></script>
+    <script src="scripts/raices/secante.js"></script>
+    <script src="scripts/raices/punto-fijo.js"></script>
+    
+    <script src="scripts/edo/euler.js"></script>
+    <script src="scripts/edo/heun.js"></script>
+    <script src="scripts/edo/runge-kutta.js"></script>
+    <script src="scripts/edo/comparacion-edo.js"></script>
+    
+    <script src="scripts/interpolacion/lagrange.js"></script>
+    <script src="scripts/interpolacion/newton-interpolacion.js"></script>
+    <script src="scripts/interpolacion/splines.js"></script>
+    
+    <script src="scripts/integracion/trapecio.js"></script>
+    <script src="scripts/integracion/simpson-13.js"></script>
+    <script src="scripts/integracion/simpson-38.js"></script>
+    <script src="scripts/integracion/romberg.js"></script>
+    <script src="scripts/integracion/comparacion-integracion.js"></script>
+    
+    <script src="scripts/algebra/gauss-seidel.js"></script>
+    <script src="scripts/algebra/lu.js"></script>
+    <script src="scripts/algebra/comparacion-algebra.js"></script>
+    
+    <script src="scripts/raices/comparacion-raices.js"></script>
+    <script src="scripts/interpolacion/comparacion-interpolacion.js"></script>
+</body>
+</html>
